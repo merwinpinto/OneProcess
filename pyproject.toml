@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "oneprocess"
-version = "0.1.0"
+version = "0.1.1"
 description = "A unified data processing, cleaning, and analytics toolkit with Streamlit support."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -18,11 +18,9 @@ dependencies = [
     "openpyxl>=3.1.0",
     "xlsxwriter>=3.1.0",
     "plotly>=5.18.0",
-]
-
-[project.optional-dependencies]
-streamlit = [
-    "streamlit>=1.35.0"
+    "streamlit>=1.35.0",
+    "db-dtypes>=1.2.0",
+    "pyarrow>=14.0.0"
 ]
 
 [project.scripts]
@@ -32,4 +30,4 @@ oneprocess-app = "oneprocess.cli:run"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["oneprocess*"]
-exclude = ["oneprocessvenv*", "venv*", "tests*"]
+exclude = ["oneprocessvenv*", "venv*", "tests*", "test*"]
