@@ -32,9 +32,8 @@
 ## Installation
 
 ```bash
-# Core package installation
+# Core library only
 pip install oneprocess
 
-## Installation
-```bash
-pip install oneprocess[streamlit]
+# To run Code
+python -m oneprocess.cli
