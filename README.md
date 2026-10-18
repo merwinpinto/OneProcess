@@ -4,37 +4,37 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/oneprocess.svg)](https://pypi.org/project/oneprocess/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-**OneProcess** is a unified, one-stop data processing toolkit built for Data Analysts and Data Engineers. It eliminates the boilerplate code needed for everyday file wrangling, database synchronization (MySQL & Google BigQuery), schema inspection, and exploratory data visualization.
+**OneProcess** is a lightweight, unified data processing toolkit built for Data Analysts and Data Engineers. It eliminates the boilerplate code needed for everyday file wrangling, data cleaning, schema inspection, and exploratory data visualization.
 
 ---
 
 ## Key Capabilities
 
-### 1. Database & Cloud Ingestion (Loaders)
-* **BigQuery Loader:** Push cleaned CSV/Excel files and DataFrames directly into Google Cloud BigQuery datasets and tables.
-* **MySQL Loader:** Streamline bulk ingestion of processed flat files into relational MySQL tables.
+### 1. Schema & Column Type Identification
+- **Schema Mapping:** Inspect files to infer data types, calculate missing value percentages, and preview samples across all columns.
+- **Transposed Inspection Layout:** View field properties with dataset columns organized horizontally across the top for easy side-by-side comparison.
 
-### 2. Cloud & Database Extraction (Extractors)
-* **MySQL to File:** Query MySQL databases and extract results straight into structured Excel (`.xlsx`) or CSV (`.csv`) files.
-* **BigQuery to File:** Run analytical queries on GCP BigQuery and dump query outputs directly to local CSV or Excel files.
+### 2. File Processing & Cleaning (CSV & Excel)
+- **Deduplication Engine:** Identify duplicate entries with full row previews before dropping, configure first/last retention strategies, and target specific primary keys or the entire dataset.
+- **Dynamic Multi-Column Filtering:** Automatically extract unique distinct values per column to filter records via intuitive dropdowns without writing manual queries.
+- **Two-Stage Preview Workflow:** Inspect your raw data prior to changes, preview filtered matches in real time, and verify the resulting dataset before committing.
+- **Dual Export Options:** Download cleaned and transformed datasets directly as CSV or Excel (`.xlsx`).
 
-### 3. File Processing & Cleaning (Excel & CSV)
-* **Deduplication Tool:** Drop duplicate rows globally or based on specified primary key columns.
-* **Filtering Tool:** Query and filter rows using logical criteria and export targeted records.
-* **Subset Creation:** Extract targeted columns and sliced segments into newly generated files.
-* **Data Column Type Identifier:** Inspect files to detect data types, identify missing values, and map inferred schemas.
-* **File Merging Tool** Merge two file type together having same colums.
+### 3. File Merging
+- **Schema-Aligned Merging:** Combine multiple CSV or Excel files sharing matching column structures into a consolidated dataset.
 
 ### 4. Graph & Visual Analysis
-* **Bar Graphs & Section Notes:** Generate bar charts for categorical metrics, distribution analysis, and export chart summaries with notes.
+- **Interactive Bar Charts:** Generate customizable Plotly bar charts with flexible aggregations (`sum`, `mean`, `count`) across categorical and numeric fields.
+- **Insight Notes & Quick Reset:** Annotate charts with contextual observations and reset chart configurations instantly with a single click.
 
 ---
 
 ## Installation
 
 ```bash
-# Standard installation
+# Core package installation
 pip install oneprocess
 
-# Complete installation with GCP BigQuery and MySQL drivers
-pip install oneprocess[all]
+## Installation
+```bash
+pip install oneprocess[streamlit]
