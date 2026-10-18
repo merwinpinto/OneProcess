@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oneprocess"
+version = "0.1.0"
+description = "A unified data processing, cleaning, and analytics toolkit with Streamlit support."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Merwin Pinto" }
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "openpyxl>=3.1.0",
+    "xlsxwriter>=3.1.0",
+    "plotly>=5.18.0",
+]
+
+[project.optional-dependencies]
+streamlit = [
+    "streamlit>=1.35.0"
+]
+
+[project.scripts]
+oneprocess = "oneprocess.cli:run"
+oneprocess-app = "oneprocess.cli:run"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["oneprocess*"]
+exclude = ["oneprocessvenv*", "venv*", "tests*"]
